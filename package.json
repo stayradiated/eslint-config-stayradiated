@@ -1,0 +1,39 @@
+{
+  "name": "eslint-config-stayradiated",
+  "version": "1.0.0",
+  "description": "Stayradiated ESLint config",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stayradiated/eslint-config-stayradiated.git"
+  },
+  "keywords": [
+    "eslint",
+    "config",
+    "lint",
+    "style",
+    "check"
+  ],
+  "author": "George Czabania <george@czabania.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stayradiated/eslint-config-stayradiated/issues"
+  },
+  "homepage": "https://github.com/stayradiated/eslint-config-stayradiated#readme",
+  "devDependencies": {
+    "tape": "4.6.3"
+  },
+  "dependencies": {
+    "babel-eslint": "7.1.1",
+    "eslint": "3.12.2",
+    "eslint-config-airbnb": "13.0.0",
+    "eslint-plugin-async-await": "0.0.0",
+    "eslint-plugin-babel": "4.0.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-react": "6.8.0"
+  }
+}
