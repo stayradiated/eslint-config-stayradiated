@@ -17,6 +17,7 @@
     "eol-last": "error",
     "global-require": "off",
     "import/default": "off",
+    "import/prefer-default-export": "off",
     "import/named": "off",
     "import/namespace": "off",
     "import/no-duplicates": "off",
