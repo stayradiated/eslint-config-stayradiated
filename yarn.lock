@@ -400,6 +400,10 @@ eslint-plugin-jsx-a11y@2.2.3:
     jsx-ast-utils "^1.0.0"
     object-assign "^4.0.1"
 
+eslint-plugin-no-foreach@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-no-foreach/-/eslint-plugin-no-foreach-1.0.0.tgz#944ccb8a39c27d24c83d1270981446f25a816c45"
+
 eslint-plugin-react@6.8.0:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-6.8.0.tgz#741ab5438a094532e5ce1bbb935d6832356f492d"
