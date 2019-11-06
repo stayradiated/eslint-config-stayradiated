@@ -1,88 +1,241 @@
-const baseRules = require('eslint-config-airbnb-base/rules/style')
-
-const [_, ...restricted] = baseRules.rules['no-restricted-syntax']
-
-const eslintrc = {
-  extends: 'eslint-config-airbnb',
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  plugins: [
+    '@typescript-eslint',
+    'mishguru',
+  ],
+  extends: [
+    'plugin:mishguru/recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
   env: {
-    browser: true,
-    node: true,
-    es6: true,
-    mocha: true
+    'es6': true,
+    'node': true,
   },
   rules: {
-    'arrow-body-style':                    0,
-    'arrow-parens':                        [2, 'always'],
-    'babel/new-cap':                       1,
-    'babel/no-await-in-loop':              2,
-    'babel/object-curly-spacing':          1,
-    'brace-style':                         [2, '1tbs', {'allowSingleLine': true}],
-    'comma-dangle':                        [2, 'always-multiline'],
-    'complexity':                          [1, 10],
-    'consistent-return':                   0,
-    'curly':                               [2, 'all'],
-    'eol-last':                            2,
-    'generator-star-spacing':              1,
-    'global-require':                      0,
-    'import/default':                      0,
-    'import/named':                        0,
-    'import/namespace':                    0,
-    'import/no-duplicates':                0,
-    'import/no-extraneous-dependencies':   0,
-    'import/no-named-as-default':          2,
-    'import/no-unresolved':                0,
-    'import/prefer-default-export':        0,
-    'indent':                              [2, 2, {'SwitchCase': 1}],
-    'jsx-quotes':                          [2, 'prefer-single'],
-    'key-spacing':                         0,
-    'keyword-spacing':                     [2, {'before': true, 'after': true}],
-    'no-alert':                            0,
-    'no-case-declarations':                0,
-    'no-console':                          0,
-    'no-extra-semi':                       2,
-    'no-multi-spaces':                     0,
-    'no-param-reassign':                   0,
-    'no-restricted-syntax':                [2, ...restricted.filter(r => r !== 'ForOfStatement')],
-    'no-spaced-func':                      2,
-    'no-underscore-dangle':                0,
-    'no-unused-vars':                      [2, {varsIgnorePattern: '^_', argsIgnorePattern: '^_'}],
-    'object-curly-spacing':                [2, 'never'],
-    'object-shorthand':                    1,
-    'one-var':                             [2, 'never'],
-    'prefer-arrow-callback':               2,
-    'prefer-template':                     1,
-    'quotes':                              [2, 'single'],
-    'react/jsx-closing-bracket-location':  0,
-    'react/jsx-filename-extension':        0,
-    'react/jsx-first-prop-new-line':       [1, 'multiline'],
-    'react/no-multi-comp':                 1,
-    'react/no-unused-prop-types':          [2, {'skipShapeProps': true}],
-    'react/require-extension':             0,
-    'require-yield':                       2,
-    'semi':                                [2, 'never'],
-    'space-before-blocks':                 [2, 'always'],
-    'space-before-function-paren':         [2, 'always'],
-    'space-infix-ops':                     1
-  },
-  plugins: [
-    'react',
-    'import',
-    'babel',
-    'async-await',
-    'no-foreach'
-  ],
-  settings: {
-    'import/resolve': {
-      moduleDirectory: [
-        'node_modules',
-        'src'
-      ]
-    }
-  },
-  parser: 'babel-eslint',
-  parserOptions: {
-    sourceType: 'module'
-  }
-}
+    'accessor-pairs': 'error',
+    'arrow-spacing': ['error', { before: true, after: true }],
+    'block-spacing': ['error', 'always'],
+    'brace-style': ['error', '1tbs', { allowSingleLine: true }],
+    'comma-spacing': ['error', { before: false, after: true }],
+    'comma-style': ['error', 'last'],
+    'constructor-super': 'error',
+    'curly': ['error', 'multi-line'],
+    'dot-location': ['error', 'property'],
+    'eol-last': 'error',
+    'eqeqeq': ['error', 'always', { null: 'ignore' }],
+    'func-call-spacing': ['error', 'never'],
+    'generator-star-spacing': ['error', { before: true, after: true }],
+    'handle-callback-err': ['error', '^(err|error)$'],
+    'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }],
+    'keyword-spacing': ['error', { 'before': true, 'after': true }],
+    'new-cap': ['error', { 'newIsCap': true, 'capIsNew': false }],
+    'new-parens': 'error',
+    'no-caller': 'error',
+    'no-class-assign': 'error',
+    'no-compare-neg-zero': 'error',
+    'no-cond-assign': 'error',
+    'no-const-assign': 'error',
+    'no-constant-condition': ['error', { 'checkLoops': false }],
+    'no-control-regex': 'error',
+    'no-debugger': 'error',
+    'no-delete-var': 'error',
+    'no-dupe-args': 'error',
+    'no-dupe-class-members': 'error',
+    'no-dupe-keys': 'error',
+    'no-duplicate-case': 'error',
+    'no-empty-character-class': 'error',
+    'no-empty-pattern': 'error',
+    'no-eval': 'error',
+    'no-ex-assign': 'error',
+    'no-extend-native': 'error',
+    'no-extra-bind': 'error',
+    'no-extra-boolean-cast': 'error',
+    'no-extra-parens': ['error', 'functions'],
+    'no-fallthrough': 'error',
+    'no-floating-decimal': 'error',
+    'no-func-assign': 'error',
+    'no-global-assign': 'error',
+    'no-implied-eval': 'error',
+    'no-inner-declarations': ['error', 'functions'],
+    'no-invalid-regexp': 'error',
+    'no-irregular-whitespace': 'error',
+    'no-iterator': 'error',
+    'no-label-var': 'error',
+    'no-labels': ['error', { 'allowLoop': false, 'allowSwitch': false }],
+    'no-lone-blocks': 'error',
+    'no-mixed-operators': ['error', {
+      'groups': [
+        ['==', '!=', '===', '!==', '>', '>=', '<', '<='],
+        ['&&', '||'],
+        ['in', 'instanceof'],
+      ],
+      'allowSamePrecedence': true,
+    }],
+    'no-mixed-spaces-and-tabs': 'error',
+    'no-multi-spaces': 'error',
+    'no-multi-str': 'error',
+    'no-multiple-empty-lines': ['error', { 'max': 1, 'maxEOF': 0 }],
+    'no-negated-in-lhs': 'error',
+    'no-new': 'error',
+    'no-new-func': 'error',
+    'no-new-object': 'error',
+    'no-new-require': 'error',
+    'no-new-symbol': 'error',
+    'no-new-wrappers': 'error',
+    'no-obj-calls': 'error',
+    'no-octal': 'error',
+    'no-octal-escape': 'error',
+    'no-path-concat': 'error',
+    'no-proto': 'error',
+    'no-redeclare': 'error',
+    'no-regex-spaces': 'error',
+    'no-return-assign': ['error', 'except-parens'],
+    'no-return-await': 'error',
+    'no-self-assign': 'error',
+    'no-self-compare': 'error',
+    'no-sequences': 'error',
+    'no-shadow-restricted-names': 'error',
+    'no-sparse-arrays': 'error',
+    'no-tabs': 'error',
+    'no-template-curly-in-string': 'error',
+    'no-this-before-super': 'error',
+    'no-throw-literal': 'error',
+    'no-trailing-spaces': 'error',
+    'no-undef': 'error',
+    'no-undef-init': 'error',
+    'no-unexpected-multiline': 'error',
+    'no-unmodified-loop-condition': 'error',
+    'no-unneeded-ternary': ['error', { 'defaultAssignment': false }],
+    'no-unreachable': 'error',
+    'no-unsafe-finally': 'error',
+    'no-unsafe-negation': 'error',
+    'no-unused-expressions': ['error', { 'allowShortCircuit': true, 'allowTernary': true, 'allowTaggedTemplates': true }],
+    'no-use-before-define': ['error', { 'functions': false, 'classes': false, 'variables': false }],
+    'no-useless-call': 'error',
+    'no-useless-computed-key': 'error',
+    'no-useless-escape': 'error',
+    'no-useless-rename': 'error',
+    'no-useless-return': 'error',
+    'no-whitespace-before-property': 'error',
+    'no-with': 'error',
+    'object-curly-spacing': ['error', 'always'],
+    'array-bracket-spacing': ['error', 'never'],
+    'object-property-newline': ['error', { 'allowMultiplePropertiesPerLine': true }],
+    'one-var': ['error', { 'initialized': 'never' }],
 
-module.exports = eslintrc
+    'operator-linebreak': ['error', 'after', {
+      overrides: {
+        '?': 'before',
+        ':': 'before',
+      },
+    }],
+
+    'padded-blocks': ['error', {
+      blocks: 'never',
+      switches: 'never',
+      classes: 'never',
+    }],
+
+    'prefer-promise-reject-errors': 'error',
+
+    'quotes': ['error', 'single', { 'avoidEscape': true, 'allowTemplateLiterals': true }],
+
+    'rest-spread-spacing': ['error', 'never'],
+
+    'semi': ['error', 'never'],
+    'semi-spacing': ['error', { before: false, after: true }],
+
+    'space-before-blocks': ['error', 'always'],
+    'space-before-function-paren': ['error', 'always'],
+    'space-in-parens': ['error', 'never'],
+    'space-infix-ops': 'error',
+    'space-unary-ops': ['error', { 'words': true, 'nonwords': false }],
+    'spaced-comment': ['error', 'always', {
+      'line': { 'markers': ['*package', '!', '/', ',', '='] },
+      'block': { 'balanced': true, 'markers': ['*package', '!', ',', ':', '::', 'flow-include'], 'exceptions': ['*'] },
+    }],
+
+    'symbol-description': 'error',
+
+    'template-curly-spacing': ['error', 'never'],
+    'template-tag-spacing': ['error', 'never'],
+
+    'unicode-bom': ['error', 'never'],
+
+    'use-isnan': 'error',
+
+    'valid-typeof': ['error', { 'requireStringLiterals': true }],
+
+    // Require IIFEs to be Wrapped
+    // https://eslint.org/docs/rules/wrap-iife
+    'wrap-iife': ['error', 'any', { 'functionPrototypeMethods': true }],
+
+    // Enforce spacing around the * in yield* expressions
+    // https://eslint.org/docs/rules/yield-star-spacing
+    'yield-star-spacing': ['error', 'both'],
+
+    // Disallow Yoda Conditions
+    // https://eslint.org/docs/rules/yoda
+    'yoda': ['error', 'never'],
+
+    // Require braces in arrow function body
+    // http://eslint.org/docs/rules/arrow-body-style
+    'arrow-body-style': 'off',
+
+    // Require parens in arrow function
+    // http://eslint.org/docs/rules/arrow-parens
+    'arrow-parens': ['error', 'always'],
+
+    // max lines
+    'max-lines': ['error', 400],
+
+    '@typescript-eslint/camelcase': ['error', { 'properties': 'never' }],
+
+    '@typescript-eslint/indent': ['error', 2, {
+      SwitchCase: 1,
+      VariableDeclarator: 1,
+      outerIIFEBody: 1,
+      MemberExpression: 1,
+      FunctionDeclaration: { parameters: 1, body: 1 },
+      FunctionExpression: { parameters: 1, body: 1 },
+      CallExpression: { arguments: 1 },
+      ArrayExpression: 1,
+      ObjectExpression: 1,
+      ImportDeclaration: 1,
+      flatTernaryExpressions: false,
+      ignoreComments: false,
+    }],
+
+    '@typescript-eslint/no-unused-vars': ['error', {
+      vars: 'all',
+      args: 'none',
+      ignoreRestSiblings: true,
+    }],
+
+    '@typescript-eslint/member-delimiter-style': ['error', {
+      multiline: {
+        delimiter: 'comma',
+        requireLast: true,
+      },
+      singleline: {
+        delimiter: 'comma',
+        requireLast: false,
+      },
+    }],
+
+    // Require explicit return types on functions and class methods
+    '@typescript-eslint/explicit-function-return-type': 'off',
+
+    // Disallows the use of require statements except in import statements
+    '@typescript-eslint/no-var-requires': 'warn',
+
+    // Disallow the declaration of empty interfaces
+    '@typescript-eslint/no-empty-interface': 'warn',
+
+    // Disallow unnecessary constructors
+    '@typescript-eslint/no-useless-constructor': 'error',
+
+    '@typescript-eslint/no-explicit-any': 'off'
+  },
+}

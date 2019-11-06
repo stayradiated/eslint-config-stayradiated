@@ -1,40 +1,22 @@
 {
   "name": "eslint-config-stayradiated",
   "version": "1.6.0",
-  "description": "Stayradiated ESLint config",
+  "description": "Typescript the way it should be",
   "main": "index.js",
-  "scripts": {
-    "test": "tape test/*.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/stayradiated/eslint-config-stayradiated.git"
-  },
-  "keywords": [
-    "eslint",
-    "config",
-    "lint",
-    "style",
-    "check"
-  ],
+  "repository": "https://github.com/stayradiated/eslint-config-stayradiated.git",
   "author": "George Czabania <george@czabania.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/stayradiated/eslint-config-stayradiated/issues"
-  },
-  "homepage": "https://github.com/stayradiated/eslint-config-stayradiated#readme",
-  "devDependencies": {
-    "tape": "4.8.0"
-  },
   "dependencies": {
-    "babel-eslint": "8.1.2",
-    "eslint": "4.14.0",
-    "eslint-config-airbnb": "16.1.0",
-    "eslint-plugin-async-await": "0.0.0",
-    "eslint-plugin-babel": "4.1.2",
-    "eslint-plugin-import": "2.8.0",
-    "eslint-plugin-jsx-a11y": "6.0.3",
-    "eslint-plugin-no-foreach": "^1.0.0",
-    "eslint-plugin-react": "7.5.1"
+    "@typescript-eslint/eslint-plugin": "2.6.1",
+    "@typescript-eslint/parser": "2.6.1",
+    "eslint-plugin-mishguru": "2.1.0"
+  },
+  "scripts": {
+    "test": "ava test/*.spec.js"
+  },
+  "devDependencies": {
+    "ava": "2.4.0",
+    "typescript": "3.7.2",
+    "eslint": "6.6.0"
   }
 }
