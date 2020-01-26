@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-stayradiated",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Typescript the way it should be",
   "main": "index.js",
   "repository": "https://github.com/stayradiated/eslint-config-stayradiated.git",
@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "ava": "3.1.0",
-    "typescript": "3.7.5",
-    "eslint": "6.8.0"
+    "eslint": "6.8.0",
+    "typescript": "3.7.5"
   }
 }
