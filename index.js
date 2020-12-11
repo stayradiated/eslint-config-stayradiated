@@ -245,7 +245,7 @@ module.exports = {
       },
       {
         selector: 'variable',
-        format: ['strictCamelCase', 'UPPER_CASE'],
+        format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
         leadingUnderscore: 'forbid',
         trailingUnderscore: 'forbid',
       },
@@ -256,7 +256,7 @@ module.exports = {
         trailingUnderscore: 'forbid',
       },
       {
-        selector: 'objectLiteralProperty',
+        selector: ['objectLiteralProperty', 'typeProperty'],
         format: null,
       },
     ],
