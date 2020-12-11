@@ -9,16 +9,19 @@ test('load config in eslint to validate all rule syntax is correct', (t) => {
   const cli = new CLIEngine({
     useEslintrc: false,
     extensions: ['ts'],
-    configFile: path.join(__dirname, '../index.js')
+    configFile: path.join(__dirname, '../index.js'),
   })
 
   const report = cli.executeOnFiles([
     path.join(__dirname, '../sample'),
-    path.join(__dirname, '../index.js')
+    path.join(__dirname, '../index.js'),
   ])
 
   if (report.errorCount > 0) {
-    console.log(report.results[0].messages)
+    for (const result of report.results) {
+      console.log(result.filePath)
+      console.log(result.messages)
+    }
   }
 
   t.is(report.errorCount, 0)

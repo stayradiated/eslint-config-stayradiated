@@ -10,8 +10,18 @@ const doNothing = (input: number): number => {
   return multiply(divide(input))
 }
 
-export const runDoNothingAndReturn = () => {
-  doNothing(10)
+export const runDoNothingAndReturn = (): number => {
+  return doNothing(10)
+}
+
+export class MyClass {
+  addOne(n: number) {
+    return n + 1
+  }
+}
+
+export function minusOne(n: number) {
+  return n - 1
 }
 
 export default doNothing

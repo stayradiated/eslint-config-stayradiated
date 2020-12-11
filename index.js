@@ -1,16 +1,13 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  plugins: [
-    '@typescript-eslint',
-    'mishguru',
-  ],
+  plugins: ['@typescript-eslint', 'mishguru'],
   extends: [
     'plugin:mishguru/recommended',
     'plugin:@typescript-eslint/recommended',
   ],
   env: {
-    'es6': true,
-    'node': true,
+    es6: true,
+    node: true,
   },
   rules: {
     'accessor-pairs': 'error',
@@ -20,23 +17,23 @@ module.exports = {
     'comma-spacing': ['error', { before: false, after: true }],
     'comma-style': ['error', 'last'],
     'constructor-super': 'error',
-    'curly': ['error', 'multi-line'],
+    curly: ['error', 'multi-line'],
     'dot-location': ['error', 'property'],
     'eol-last': 'error',
-    'eqeqeq': ['error', 'always', { null: 'ignore' }],
+    eqeqeq: ['error', 'always', { null: 'ignore' }],
     'func-call-spacing': ['error', 'never'],
     'generator-star-spacing': ['error', { before: true, after: true }],
     'handle-callback-err': ['error', '^(err|error)$'],
-    'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }],
-    'keyword-spacing': ['error', { 'before': true, 'after': true }],
-    'new-cap': ['error', { 'newIsCap': true, 'capIsNew': false }],
+    'key-spacing': ['error', { beforeColon: false, afterColon: true }],
+    'keyword-spacing': ['error', { before: true, after: true }],
+    'new-cap': ['error', { newIsCap: true, capIsNew: false }],
     'new-parens': 'error',
     'no-caller': 'error',
     'no-class-assign': 'error',
     'no-compare-neg-zero': 'error',
     'no-cond-assign': 'error',
     'no-const-assign': 'error',
-    'no-constant-condition': ['error', { 'checkLoops': false }],
+    'no-constant-condition': ['error', { checkLoops: false }],
     'no-control-regex': 'error',
     'no-debugger': 'error',
     'no-delete-var': 'error',
@@ -62,20 +59,23 @@ module.exports = {
     'no-irregular-whitespace': 'error',
     'no-iterator': 'error',
     'no-label-var': 'error',
-    'no-labels': ['error', { 'allowLoop': false, 'allowSwitch': false }],
+    'no-labels': ['error', { allowLoop: false, allowSwitch: false }],
     'no-lone-blocks': 'error',
-    'no-mixed-operators': ['error', {
-      'groups': [
-        ['==', '!=', '===', '!==', '>', '>=', '<', '<='],
-        ['&&', '||'],
-        ['in', 'instanceof'],
-      ],
-      'allowSamePrecedence': true,
-    }],
+    'no-mixed-operators': [
+      'error',
+      {
+        groups: [
+          ['==', '!=', '===', '!==', '>', '>=', '<', '<='],
+          ['&&', '||'],
+          ['in', 'instanceof'],
+        ],
+        allowSamePrecedence: true,
+      },
+    ],
     'no-mixed-spaces-and-tabs': 'error',
     'no-multi-spaces': 'error',
     'no-multi-str': 'error',
-    'no-multiple-empty-lines': ['error', { 'max': 1, 'maxEOF': 0 }],
+    'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
     'no-negated-in-lhs': 'error',
     'no-new': 'error',
     'no-new-func': 'error',
@@ -106,12 +106,22 @@ module.exports = {
     'no-undef-init': 'error',
     'no-unexpected-multiline': 'error',
     'no-unmodified-loop-condition': 'error',
-    'no-unneeded-ternary': ['error', { 'defaultAssignment': false }],
+    'no-unneeded-ternary': ['error', { defaultAssignment: false }],
     'no-unreachable': 'error',
     'no-unsafe-finally': 'error',
     'no-unsafe-negation': 'error',
-    'no-unused-expressions': ['error', { 'allowShortCircuit': true, 'allowTernary': true, 'allowTaggedTemplates': true }],
-    'no-use-before-define': ['error', { 'functions': false, 'classes': false, 'variables': false }],
+    'no-unused-expressions': [
+      'error',
+      {
+        allowShortCircuit: true,
+        allowTernary: true,
+        allowTaggedTemplates: true,
+      },
+    ],
+    'no-use-before-define': [
+      'error',
+      { functions: false, classes: false, variables: false },
+    ],
     'no-useless-call': 'error',
     'no-useless-computed-key': 'error',
     'no-useless-escape': 'error',
@@ -121,40 +131,69 @@ module.exports = {
     'no-with': 'error',
     'object-curly-spacing': ['error', 'always'],
     'array-bracket-spacing': ['error', 'never'],
-    'object-property-newline': ['error', { 'allowMultiplePropertiesPerLine': true }],
-    'one-var': ['error', { 'initialized': 'never' }],
+    'object-property-newline': [
+      'error',
+      { allowMultiplePropertiesPerLine: true },
+    ],
+    'one-var': ['error', { initialized: 'never' }],
 
-    'operator-linebreak': ['error', 'after', {
-      overrides: {
-        '?': 'before',
-        ':': 'before',
+    'operator-linebreak': [
+      'error',
+      'after',
+      {
+        overrides: {
+          '?': 'before',
+          ':': 'before',
+        },
       },
-    }],
+    ],
 
-    'padded-blocks': ['error', {
-      blocks: 'never',
-      switches: 'never',
-      classes: 'never',
-    }],
+    'padded-blocks': [
+      'error',
+      {
+        blocks: 'never',
+        switches: 'never',
+        classes: 'never',
+      },
+    ],
 
     'prefer-promise-reject-errors': 'error',
 
-    'quotes': ['error', 'single', { 'avoidEscape': true, 'allowTemplateLiterals': true }],
+    quotes: [
+      'error',
+      'single',
+      { avoidEscape: true, allowTemplateLiterals: true },
+    ],
 
     'rest-spread-spacing': ['error', 'never'],
 
-    'semi': ['error', 'never'],
+    semi: ['error', 'never'],
     'semi-spacing': ['error', { before: false, after: true }],
 
     'space-before-blocks': ['error', 'always'],
-    'space-before-function-paren': ['error', 'always'],
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'always',
+      },
+    ],
     'space-in-parens': ['error', 'never'],
     'space-infix-ops': 'error',
-    'space-unary-ops': ['error', { 'words': true, 'nonwords': false }],
-    'spaced-comment': ['error', 'always', {
-      'line': { 'markers': ['*package', '!', '/', ',', '='] },
-      'block': { 'balanced': true, 'markers': ['*package', '!', ',', ':', '::', 'flow-include'], 'exceptions': ['*'] },
-    }],
+    'space-unary-ops': ['error', { words: true, nonwords: false }],
+    'spaced-comment': [
+      'error',
+      'always',
+      {
+        line: { markers: ['*package', '!', '/', ',', '='] },
+        block: {
+          balanced: true,
+          markers: ['*package', '!', ',', ':', '::', 'flow-include'],
+          exceptions: ['*'],
+        },
+      },
+    ],
 
     'symbol-description': 'error',
 
@@ -165,11 +204,11 @@ module.exports = {
 
     'use-isnan': 'error',
 
-    'valid-typeof': ['error', { 'requireStringLiterals': true }],
+    'valid-typeof': ['error', { requireStringLiterals: true }],
 
     // Require IIFEs to be Wrapped
     // https://eslint.org/docs/rules/wrap-iife
-    'wrap-iife': ['error', 'any', { 'functionPrototypeMethods': true }],
+    'wrap-iife': ['error', 'any', { functionPrototypeMethods: true }],
 
     // Enforce spacing around the * in yield* expressions
     // https://eslint.org/docs/rules/yield-star-spacing
@@ -177,7 +216,7 @@ module.exports = {
 
     // Disallow Yoda Conditions
     // https://eslint.org/docs/rules/yoda
-    'yoda': ['error', 'never'],
+    yoda: ['error', 'never'],
 
     // Require braces in arrow function body
     // http://eslint.org/docs/rules/arrow-body-style
@@ -190,39 +229,79 @@ module.exports = {
     // max lines
     'max-lines': ['error', 400],
 
-    '@typescript-eslint/camelcase': ['error', { 'properties': 'never' }],
-
-    '@typescript-eslint/indent': ['error', 2, {
-      SwitchCase: 1,
-      VariableDeclarator: 1,
-      outerIIFEBody: 1,
-      MemberExpression: 1,
-      FunctionDeclaration: { parameters: 1, body: 1 },
-      FunctionExpression: { parameters: 1, body: 1 },
-      CallExpression: { arguments: 1 },
-      ArrayExpression: 1,
-      ObjectExpression: 1,
-      ImportDeclaration: 1,
-      flatTernaryExpressions: false,
-      ignoreComments: false,
-    }],
-
-    '@typescript-eslint/no-unused-vars': ['error', {
-      vars: 'all',
-      args: 'none',
-      ignoreRestSiblings: true,
-    }],
-
-    '@typescript-eslint/member-delimiter-style': ['error', {
-      multiline: {
-        delimiter: 'comma',
-        requireLast: true,
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: 'typeLike',
+        format: ['StrictPascalCase'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
       },
-      singleline: {
-        delimiter: 'comma',
-        requireLast: false,
+      {
+        selector: 'default',
+        format: ['strictCamelCase'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
       },
-    }],
+      {
+        selector: 'variable',
+        format: ['strictCamelCase', 'UPPER_CASE'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
+      {
+        selector: 'class',
+        format: ['StrictPascalCase'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
+      {
+        selector: 'objectLiteralProperty',
+        format: null,
+      },
+    ],
+
+    '@typescript-eslint/indent': [
+      'error',
+      2,
+      {
+        SwitchCase: 1,
+        VariableDeclarator: 1,
+        outerIIFEBody: 1,
+        MemberExpression: 1,
+        FunctionDeclaration: { parameters: 1, body: 1 },
+        FunctionExpression: { parameters: 1, body: 1 },
+        CallExpression: { arguments: 1 },
+        ArrayExpression: 1,
+        ObjectExpression: 1,
+        ImportDeclaration: 1,
+        flatTernaryExpressions: false,
+        ignoreComments: false,
+      },
+    ],
+
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        args: 'none',
+        ignoreRestSiblings: true,
+      },
+    ],
+
+    '@typescript-eslint/member-delimiter-style': [
+      'error',
+      {
+        multiline: {
+          delimiter: 'comma',
+          requireLast: true,
+        },
+        singleline: {
+          delimiter: 'comma',
+          requireLast: false,
+        },
+      },
+    ],
 
     // Require explicit return types on functions and class methods
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -236,6 +315,6 @@ module.exports = {
     // Disallow unnecessary constructors
     '@typescript-eslint/no-useless-constructor': 'error',
 
-    '@typescript-eslint/no-explicit-any': 'off'
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 }
