@@ -256,7 +256,7 @@ module.exports = {
         trailingUnderscore: 'forbid',
       },
       {
-        selector: ['objectLiteralProperty', 'typeProperty'],
+        selector: ['classProperty', 'objectLiteralProperty', 'typeProperty'],
         format: null,
       },
     ],
