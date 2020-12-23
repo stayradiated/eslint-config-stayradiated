@@ -258,6 +258,7 @@ module.exports = {
       {
         selector: [
           'classProperty',
+          'enumMember',
           'objectLiteralMethod',
           'objectLiteralProperty',
           'typeProperty',
