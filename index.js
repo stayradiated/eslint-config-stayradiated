@@ -233,7 +233,7 @@ module.exports = {
       'error',
       {
         selector: 'typeLike',
-        format: ['StrictPascalCase'],
+        format: ['PascalCase'],
         leadingUnderscore: 'forbid',
         trailingUnderscore: 'forbid',
       },
@@ -251,7 +251,7 @@ module.exports = {
       },
       {
         selector: 'class',
-        format: ['StrictPascalCase'],
+        format: ['PascalCase'],
         leadingUnderscore: 'forbid',
         trailingUnderscore: 'forbid',
       },
