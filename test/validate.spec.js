@@ -1,28 +1,28 @@
 const test = require('ava')
 
-const eslint = require('eslint')
+const { ESLint } = require('eslint')
 const path = require('path')
 
-test('load config in eslint to validate all rule syntax is correct', (t) => {
-  const CLIEngine = eslint.CLIEngine
-
-  const cli = new CLIEngine({
+test('load config in eslint to validate all rule syntax is correct', async (t) => {
+  const eslint = new ESLint({
     useEslintrc: false,
     extensions: ['ts'],
-    configFile: path.join(__dirname, '../index.js'),
+    overrideConfigFile: path.join(__dirname, '../index.js'),
   })
 
-  const report = cli.executeOnFiles([
+  const files = await eslint.lintFiles([
     path.join(__dirname, '../sample'),
     path.join(__dirname, '../index.js'),
   ])
 
-  if (report.errorCount > 0) {
-    for (const result of report.results) {
-      console.log(result.filePath)
-      console.log(result.messages)
+  for (const file of files) {
+    if (file.errorCount > 0) {
+      console.log(file.filePath)
+      for (const message of file.messages) {
+        console.log(message)
+      }
     }
-  }
 
-  t.is(report.errorCount, 0)
+    t.is(file.errorCount, 0)
+  }
 })
